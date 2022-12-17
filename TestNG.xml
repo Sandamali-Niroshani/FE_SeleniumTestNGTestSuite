@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Amazon booking">
+
+    <!-- Connect reporting utility class and testcase -->
+    <listeners>
+        <listener class-name ="com.amazon.utilities.Reporting" />
+    </listeners>
+
+    <!--<test name="Amazon order test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="dataPath" value=".src/test/java/com/amazon/testData/Tc_02.properties" />
+        <classes>
+            <class name="com.amazon.testScripts.TC01_LoginToAmazon"/>
+        </classes>
+
+
+    </test>-->
+
+    <!--<test name="Amazon order test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="dataPath" value="./src/test/java/com/amazon/testData/Tc_02.properties"/>
+        <classes>
+            <class name="com.amazon.testScripts.TC02_SelectHardCoverBookInAmazon"/>
+        </classes>
+    </test>-->
+
+   <test name="Amazon order test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="dataPath" value="./src/test/java/com/amazon/testData/Tc_03.properties"/>
+        <classes>
+            <class name="com.amazon.testScripts.TC03_OrderAddToCartAndProceed"/>
+        </classes>
+    </test>
+</suite>
