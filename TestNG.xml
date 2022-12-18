@@ -18,19 +18,19 @@
 
     </test>-->
 
-    <!--<test name="Amazon order test">
+    <test name="Amazon order test">
         <parameter name="browser" value="chrome"/>
         <parameter name="dataPath" value="./src/test/java/com/amazon/testData/Tc_02.properties"/>
         <classes>
             <class name="com.amazon.testScripts.TC02_SelectHardCoverBookInAmazon"/>
         </classes>
-    </test>-->
+    </test>
 
-   <test name="Amazon order test">
+   <!--<test name="Amazon order test">
         <parameter name="browser" value="chrome"/>
         <parameter name="dataPath" value="./src/test/java/com/amazon/testData/Tc_03.properties"/>
         <classes>
             <class name="com.amazon.testScripts.TC03_OrderAddToCartAndProceed"/>
         </classes>
-    </test>
+    </test>-->
 </suite>

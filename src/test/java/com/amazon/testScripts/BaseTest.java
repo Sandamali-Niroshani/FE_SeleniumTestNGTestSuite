@@ -1,6 +1,7 @@
 package com.amazon.testScripts;
 
 import com.amazon.utilities.ReadConfig;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
@@ -31,8 +32,9 @@ public class BaseTest {
     @BeforeClass
     public void setup(String br){
 
-        logger = logger.getLogger("Amazon");
+        logger = Logger.getLogger("Amazon");
         PropertyConfigurator.configure("log4j.properties");
+//        BasicConfigurator.configure();
 
         if(br.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Drivers//chromedriver.exe");
