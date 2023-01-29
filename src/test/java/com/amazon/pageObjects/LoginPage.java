@@ -34,6 +34,9 @@ public class LoginPage {
     @FindBy(how= XPATH, using="//input[@id='signInSubmit']")
     public WebElement btn_submit;
 
+    @FindBy(how= XPATH, using="//*[contains(@id,'nav-link-accountList-nav-line')]")
+    public WebElement accountDisplayName;
+
 
 
 

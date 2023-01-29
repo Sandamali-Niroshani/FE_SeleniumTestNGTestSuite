@@ -8,6 +8,8 @@ import org.testng.Assert;
 
 import java.io.IOException;
 
+import static com.amazon.testScripts.BaseTest.logger;
+
 
 public class LoginPageFunctions {
 
@@ -22,24 +24,42 @@ public class LoginPageFunctions {
     }
 
 
-
-
-    public void login(String phoneNumber,String password) throws IOException {
+    /**
+     * @param phoneNumber provide phone number or email as user name
+     * @param password    provide password
+     * @throws IOException
+     */
+    public void login(String phoneNumber, String password) throws IOException {
 
         loginpage.btn_signIn.click();
         loginpage.tf_phoneNumber.sendKeys(phoneNumber);
         loginpage.btn_continue.click();
         loginpage.tf_password.sendKeys(password);
         loginpage.btn_submit.click();
-        if(driver.getTitle().equals("Amazon.sg: Shop Online for Electronics, Computers, Books, Toys, DVDs, Baby, Grocery, & more")){
-            Assert.assertTrue(true);
-        }
-        else
-        {
-            baseTest.captureScreenshots(driver,"LoginToAmazon");
-            Assert.assertTrue(false);
-        }
-
     }
 
+    public void verifyTitleOfThePage(String pageTitle) throws IOException {
+        if (driver.getTitle().equals(pageTitle)) {
+            Assert.assertTrue(true);
+        } else {
+            baseTest.captureScreenshots(driver, "LoginToAmazon");
+            Assert.assertTrue(false, "Page title was incorrect");
+
+        }
+        logger.info("Verified page title successfully");
+    }
+
+    /**
+     * @param expectedAccountName expected display name in amazon
+     */
+    public void verifyUserLogIntoCorrectAccount(String expectedAccountName) {
+        Assert.assertEquals(loginpage.accountDisplayName.getText(), expectedAccountName, "User logged into the incorrect account");
+        logger.info("Log into the correct account");
+    }
+
+
 }
+
+
+
+

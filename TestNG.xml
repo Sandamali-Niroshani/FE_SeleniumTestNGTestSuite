@@ -8,29 +8,21 @@
         <listener class-name ="com.amazon.utilities.Reporting" />
     </listeners>
 
-    <!--<test name="Amazon order test">
+ <!--<test name="Log into amazon">
         <parameter name="browser" value="chrome"/>
-        <parameter name="dataPath" value=".src/test/java/com/amazon/testData/Tc_02.properties" />
+         <parameter name="dataPath" value="./src/test/java/com/amazon/testData/Tc_01.properties"/>
         <classes>
             <class name="com.amazon.testScripts.TC01_LoginToAmazon"/>
         </classes>
-
-
     </test>-->
 
-    <test name="Amazon order test">
+ <test name="Hard cover book add into cart">
         <parameter name="browser" value="chrome"/>
         <parameter name="dataPath" value="./src/test/java/com/amazon/testData/Tc_02.properties"/>
         <classes>
-            <class name="com.amazon.testScripts.TC02_SelectHardCoverBookInAmazon"/>
+            <class name="com.amazon.testScripts.TC02_HardCoverBookAddIntoCart"/>
         </classes>
     </test>
 
-   <!--<test name="Amazon order test">
-        <parameter name="browser" value="chrome"/>
-        <parameter name="dataPath" value="./src/test/java/com/amazon/testData/Tc_03.properties"/>
-        <classes>
-            <class name="com.amazon.testScripts.TC03_OrderAddToCartAndProceed"/>
-        </classes>
-    </test>-->
+
 </suite>
